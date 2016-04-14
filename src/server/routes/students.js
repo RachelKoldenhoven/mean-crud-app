@@ -20,7 +20,6 @@ router.get('/', function(req, res, next) {
 // GET one student //
 router.get('/:id', function(req, res, next) {
   Students.findById(req.params.id, function(error, student) {
-    console.log(req.params.id);
     if(error) {
       return next(error);
     }
@@ -32,10 +31,8 @@ router.get('/:id', function(req, res, next) {
 
 // POST to add a new student //
 router.post('/', function(req, res, next) {
-  console.log(req.body);
   var student = new Students(req.body);
   student.save (function(error, newStudent) {
-    console.log('newstudent: ' + newStudent);
     if(error) {
       return next(error);
     }

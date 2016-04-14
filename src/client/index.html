@@ -15,7 +15,7 @@
         <!-- add content here -->
         <div class="container" ng-controller="addStudentController">
         <form class="form" ng-submit="addStudent(student)">
-            <input ng-model="student.firsName" class="form-control" type="text" placeholder="enter a first name..." required>
+            <input ng-model="student.firstName" class="form-control" type="text" placeholder="enter a first name..." required>
             <input ng-model="student.lastName" class="form-control" type="text" placeholder="enter a last name..." required>
             <select ng-model="student.year">
                 <option value="1">1</option>
@@ -28,6 +28,15 @@
             </select>
             <button type="submit" class="button btn-success">Add Student</button>
         </form>
+            <div class="container">
+                <div class="student" ng-repeat="student in allStudents">
+                    <p>First Name: {{ student.firstName }}</p>
+                    <p>Last Name: {{ student.lastName }}</p>
+                    <p>Year: {{ student.year }}</p>
+                    <button ng-click="deleteStudent(student.id)">Delete Student</button>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>

@@ -6,17 +6,18 @@ app.controller('addStudentController', ['$scope', 'studentDataService', function
 
   studentDataService.getAllStudents()
     .then(function(students) {
-      console.log(students);
-      $scope.allStudents = students.data.data;
+      $scope.allStudents = students.data;
     });
 
   $scope.student = {};
 
   $scope.addStudent = function(student) {
-    console.log(student);
-  studentDataService.addStudent(student);
-    $scope.student = {};
+    studentDataService.addStudent(student);
+  };
 
+  $scope.deleteStudent = function(student) {
+    console.log('controller student: ' + student);
+    studentDataService.deleteStudent(student);
   }
 
 }]);
