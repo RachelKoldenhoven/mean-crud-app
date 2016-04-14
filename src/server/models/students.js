@@ -29,15 +29,3 @@ module.exports = Student;
 
 
 
-
-
-
-//
-//Artist.find({}, function(err, artists) {
-//  if(err) {
-//    console.log("Error!", err);
-//  }
-//  console.log('Artists: ', artists);
-//
-//});
-
