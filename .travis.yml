@@ -1,16 +1,19 @@
 language: node_js
-
 node_js:
-  - "5"
-  - "4.1"
-  - "4.0"
-  - '0.12'
-  - '0.11'
-
+- '5'
+- '4.1'
+- '4.0'
+- '0.12'
+- '0.11'
 services: mongodb
-
 before_script:
-  - npm install -g mocha
-
-
-
+- npm install -g mocha
+deploy:
+  provider: heroku
+  api_key:
+    secure: HiIh2VTDYoHKEMl9PSdUECJdkFbwM5oSVs7kE/zmphYTtXKIb+Z3LCUf37116RtmUJGR4LUs62xIYUyD0dpn3sZih02lvAFn11M+5JcOpuL6v9ZPVdNn2J8OuKBFMb3MjLCvjZc3jYqIoUOr6SeV+o+Ug+Ad5Pgv/GS90lCYV5o9gDYEjM/iFoPAQxZEnSJeEeIcfR7bSqbiO+8mIY2BcTGXwAKpQ2YZKxlHEvY9XQhFv7v8MNb4tSRkRANjyNNwCZnZqCC0sU4rfH8Kr47TXZnzd/E4YigxdqOElwD3mXXdHrG5rC4d7NalXYlqeuQfzBI2OHTLt1TiyrMQgIX4Lv10wVikqS1y4bEXKn5dFSPeXylaHANsbGuWp18DCNnsX81DNve44RdO+NMS7wqlx0ehKT1hxSujZPp+ehoFntcByvc1i4EasZScgprFYhjlGsqFwllrkaHhtorV5Zmy84exMJUaeBodMn+G54qOd7KDDhw4m68Rc93clJ6/At0PLSDmrHKwk4AHIp9J3z31wSo3YDGIiiae/A5kVohN35xU1FCR7TYBueTnIqASxXhby+o6e4gt7bcbhBZ8/rbnbSSwZrHJYGG9Fz/YDvPjwYiK6NezE6IiJbTsHFJgDNSM4/dcutd2QvX9AYBQGoH8ZMo0gDP8GtVsgUYvwvTXtSI=
+  app: meanschool
+  on:
+    branch: master
+    node: '5'
+    repo: RachelKoldenhoven/mean-crud-app
