@@ -1,8 +1,9 @@
 var config = {};
 
 config.mongoURI = {
+  test: 'mongodb://localhost/first-mean-app-testing',
   development: 'mongodb://localhost/first-mean-app',
-  test: 'mongodb://localhost/first-mean-app-testing'
+  production: process.env.MONGODB_URI
 };
 
 module.exports = config;
